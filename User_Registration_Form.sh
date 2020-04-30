@@ -4,9 +4,9 @@ shopt -s extglob 		#Extended global
 
 echo "Enter the user First Name"
 read user
-pattern='^[A-Z]{1}[a-z]{3,}$'
+first_name_pattern='^[A-Z]{1}[a-z]{2,}$'
 
-if [[ $user =~ $pattern ]]
+if [[ $user =~ $first_name_pattern ]]
 then
 	echo valid
 else
