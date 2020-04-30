@@ -42,7 +42,20 @@ fi
 
 }
 
+function mobileNumber(){
+echo "Enter your mobile number with country code"
+read mobileNumber
+mobile_number_pattern='^([0-9]{1,4}[[:space:]])?[0-9]{10}$'
+
+if [[ $mobileNumber =~ $mobile_number_pattern ]]
+then
+	echo valid
+else
+	echo invalid
+fi
+}
 
 firstName
 lastName
 email
+mobileNumber
