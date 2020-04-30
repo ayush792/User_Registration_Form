@@ -18,7 +18,7 @@ fi
 function lastName(){
 echo "Enter the last name"
 read user
-last_name_pattern='[A-Z]{1}[a-z]{2,}$'
+last_name_pattern='^[A-Z]{1}[a-z]{2,}$'
 
 if [[ $user =~ $last_name_pattern ]]
 then
@@ -28,5 +28,21 @@ else
 fi
 }
 
+function email(){
+echo "Enter your email address"
+read email
+email_pattern="[a-zA-Z0-9]+([._-+][a-zA-Z0-9]+)*@[a-zA-Z]+.[a-zA-Z]{2,4}([.][a-zA-Z]{2})$"
+
+if [[ $email =~ $email_pattern ]]
+then
+	echo valid
+else
+	echo invalid
+fi
+
+}
+
+
 firstName
 lastName
+email
